@@ -41,7 +41,7 @@ class DoublyLinkedList {
 
   pop() {
     // remove the tail and return it
-    if (this.length === 0) {
+    if (!this.length) {
       return null;
     }
 
@@ -55,6 +55,26 @@ class DoublyLinkedList {
       removedNode.prev = null;
       return removedNode;
     }
+    this.length -= 1;
+    return removedNode;
+  }
+
+  shift() {
+    // remove the head of the list
+    if (!this.length) {
+      return null;
+    }
+
+    const removedNode = this.head;
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.head = removedNode.next;
+      removedNode.next.prev = null;
+      removedNode.next = null;
+    }
+
     this.length -= 1;
     return removedNode;
   }
