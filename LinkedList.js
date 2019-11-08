@@ -12,14 +12,7 @@ class SinglyLinkedList {
     this.tail = null;
   }
 
-  print() {
-    let node = this.head;
-    while (node) {
-      console.log(node.value);
-      node = node.next;
-    }
-  }
-
+  // O(1) TIME | O(1) SPACE
   push(value) {
     // Inserting at the end of the linked list
     const node = new Node(value);
@@ -35,6 +28,7 @@ class SinglyLinkedList {
     return this;
   }
 
+  // O(1) TIME | O(1) SPACE
   pop() {
     // Remove the last item from the list
     if (!this.length) {
@@ -60,6 +54,7 @@ class SinglyLinkedList {
     return currentNode;
   }
 
+  // O(1) TIME | O(1) SPACE
   shift() {
     // Remove the first node in the list
     if (!this.head) return this;
@@ -72,6 +67,7 @@ class SinglyLinkedList {
     return removedNode;
   }
 
+  // O(1) TIME | O(1) SPACE
   unshift(value) {
     // Insert at the start of the list
     const node = new Node(value);
@@ -87,6 +83,7 @@ class SinglyLinkedList {
     return this;
   }
 
+  // O(n) TIME | O(1) SPACE
   get(index) {
     // return the item at the given index. Starting from 0
     if (index < 0 || index >= this.length) return null;
@@ -99,6 +96,7 @@ class SinglyLinkedList {
     return currentNode;
   }
 
+  // O(n) TIME | O(1) SPACE
   set(index, value) {
     // set the value of a node at the given index
     let node = this.get(index);
@@ -107,7 +105,9 @@ class SinglyLinkedList {
     return node;
   }
 
+  // O(n) TIME | O(1) SPACE
   insert(index, value) {
+    // insert node at the given index
     if (index < 0 || index > this.length) return null;
     if (index === this.length) return this.push(value);
     if (index === 0) return this.unshift(value);
@@ -118,6 +118,47 @@ class SinglyLinkedList {
     prevNode.next = newNode;
     this.length += 1;
     return this;
+  }
+
+  // O(n) TIME | O(1) SPACE
+  remove(index) {
+    // remove the item at the
+    if (index < 0 || index > this.length) return null;
+    if (index === this.length - 1) return this.pop();
+    if (index === 0) return this.shift();
+
+    const prevNode = this.get(index - 1);
+    const removedNode = prevNode.next;
+    prevNode.next = removedNode.next;
+    this.length -= 1;
+    return removedNode;
+  }
+
+  // O(n) TIME | O(1) SPACE
+  reverse() {
+    // reverse the entire list
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+
+    let prev = null;
+    let next;
+    while (node) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    }
+    return this;
+  }
+
+  print() {
+    // log the list in order to the console
+    let node = this.head;
+    while (node) {
+      console.log(node.value);
+      node = node.next;
+    }
   }
 }
 
