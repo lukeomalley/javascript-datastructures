@@ -54,9 +54,13 @@ class SinglyLinkedList {
 
   shift() {
     // Remove the first node in the list
+    if (!this.head) return this;
     const removedNode = this.head;
     this.head = this.head.next;
     this.length -= 1;
+    if (this.length === 0) {
+      this.tail = null;
+    }
     return removedNode;
   }
 }
