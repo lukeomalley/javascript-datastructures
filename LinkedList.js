@@ -63,11 +63,24 @@ class SinglyLinkedList {
     }
     return removedNode;
   }
+
+  unshift(value) {
+    // Insert at the start of the list
+    const node = new Node(value);
+    if (!this.head) {
+      this.head = node;
+      this.tail = node;
+    } else {
+      node.next = this.head;
+      this.head = node;
+    }
+
+    this.length += 1;
+    return this;
+  }
 }
 
 let list = new SinglyLinkedList();
 list.push('Hello');
 list.push('There');
 list.push('Friend');
-
-console.log(list);
