@@ -14,6 +14,7 @@ class DoublyLinkedList {
   }
 
   print() {
+    // convert list to array
     const list = [];
     let currNode = this.head;
     while (currNode) {
@@ -53,7 +54,6 @@ class DoublyLinkedList {
       this.tail = removedNode.prev;
       this.tail.next = null;
       removedNode.prev = null;
-      return removedNode;
     }
     this.length -= 1;
     return removedNode;
@@ -71,12 +71,28 @@ class DoublyLinkedList {
       this.tail = null;
     } else {
       this.head = removedNode.next;
-      removedNode.next.prev = null;
+      this.head.prev = null;
       removedNode.next = null;
     }
 
     this.length -= 1;
     return removedNode;
+  }
+
+  unshift(value) {
+    // insert node at the head
+    const node = new Node(value);
+    if (!this.head) {
+      this.head = node;
+      this.tail = node;
+    } else {
+      node.next = this.head;
+      this.head.prev = node;
+      this.head = node;
+    }
+
+    this.length += 1;
+    return this;
   }
 }
 
