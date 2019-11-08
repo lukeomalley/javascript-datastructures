@@ -101,7 +101,7 @@ class DoublyLinkedList {
       return null;
     }
 
-    if (index > this.length / 2) {
+    if (index > (this.length - 1) / 2) {
       // start from tail
       let count = this.length - 1;
       let currNode = this.tail;
@@ -109,7 +109,6 @@ class DoublyLinkedList {
         currNode = currNode.prev;
         count -= 1;
       }
-      return currNode;
     } else {
       // start from the head
       let count = 0;
@@ -118,8 +117,17 @@ class DoublyLinkedList {
         currNode = currNode.next;
         count += 1;
       }
-      return currNode;
     }
+    return currNode;
+  }
+
+  set(index, value) {
+    // set the value of the at the given index
+    const nodeToUpdate = get(index);
+    if (nodeToUpdate) {
+      nodeToUpdate.value = value;
+    }
+    return this;
   }
 }
 
