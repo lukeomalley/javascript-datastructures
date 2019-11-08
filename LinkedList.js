@@ -12,6 +12,14 @@ class SinglyLinkedList {
     this.tail = null;
   }
 
+  print() {
+    let node = this.head;
+    while (node) {
+      console.log(node.value);
+      node = node.next;
+    }
+  }
+
   push(value) {
     // Inserting at the end of the linked list
     const node = new Node(value);
@@ -75,6 +83,39 @@ class SinglyLinkedList {
       this.head = node;
     }
 
+    this.length += 1;
+    return this;
+  }
+
+  get(index) {
+    // return the item at the given index. Starting from 0
+    if (index < 0 || index >= this.length) return null;
+    let count = 0;
+    let currentNode = this.head;
+    while (count < index) {
+      currentNode = currentNode.next;
+      count += 1;
+    }
+    return currentNode;
+  }
+
+  set(index, value) {
+    // set the value of a node at the given index
+    let node = this.get(index);
+    if (!node) return null;
+    node.value = value;
+    return node;
+  }
+
+  insert(index, value) {
+    if (index < 0 || index > this.length) return null;
+    if (index === this.length) return this.push(value);
+    if (index === 0) return this.unshift(value);
+
+    const prevNode = this.get(index - 1);
+    const newNode = new Node(value);
+    newNode.next = prevNode.next;
+    prevNode.next = newNode;
     this.length += 1;
     return this;
   }
