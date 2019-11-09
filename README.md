@@ -9,3 +9,12 @@ Ordered list of nodes where each node has a reference to the next item in the li
 
 ## Doubly Linked List
 Ordered lsit of nodes where each node stores a reference to its next AND previous nodes. This gives us improved flexibility in performing operations like removing the last node or iterating throught the list backwards at the cost of more memory.
+
+## Stack
+Collection of data that follows the LIFO(last in first out) principle. A stack is a limited access data structure meaning that elements can only be added and removed from the top of the stack.
+Applications of a stack:
+- The call stack
+- Application routing
+- Reverse a word
+- Undo mechanism in text editors
+- Backtracking: think abou solving a maze, when you get to a dead end you need to backtrack
