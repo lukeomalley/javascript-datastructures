@@ -13,6 +13,7 @@ class DoublyLinkedList {
     this.length = 0;
   }
 
+  // O(n) TIME | O(n) SPACE
   print() {
     // convert list to array
     const list = [];
@@ -24,6 +25,7 @@ class DoublyLinkedList {
     return list;
   }
 
+  // O(1) TIME | O(1) SPACE
   push(value) {
     // insert after tail
     const node = new Node(value);
@@ -40,6 +42,7 @@ class DoublyLinkedList {
     return this;
   }
 
+  // O(1) TIME | O(1) SPACE
   pop() {
     // remove the tail and return it
     if (!this.length) {
@@ -59,6 +62,7 @@ class DoublyLinkedList {
     return removedNode;
   }
 
+  // O(1) TIME | O(1) SPACE
   shift() {
     // remove the head of the list
     if (!this.length) {
@@ -79,6 +83,7 @@ class DoublyLinkedList {
     return removedNode;
   }
 
+  // O(1) TIME | O(1) SPACE
   unshift(value) {
     // insert node at the head
     const node = new Node(value);
@@ -95,6 +100,7 @@ class DoublyLinkedList {
     return this;
   }
 
+  // O(n) TIME | O(1) SPACE
   get(index) {
     // returns the node at the given index
     if (index < 0 || index >= this.length) {
@@ -122,6 +128,7 @@ class DoublyLinkedList {
     }
   }
 
+  // O(n) TIME | O(1) SPACE
   set(index, value) {
     // set the value of the at the given index
     const nodeToUpdate = get(index);
@@ -131,7 +138,9 @@ class DoublyLinkedList {
     return this;
   }
 
+  // O(n) TIME | O(1) SPACE
   insert(index, value) {
+    // insert node at given index
     if (index < 0 || index > this.length) return null;
     if (index === 0) return this.unshift(value);
     if (index === this.length) return this.push(value);
@@ -149,7 +158,9 @@ class DoublyLinkedList {
     return this;
   }
 
+  // O(n) TIME | O(1) SPACE
   remove(index) {
+    // remove node at given index
     if (index < 0 || index >= this.length) return null;
     if (index === 0) return this.shift();
     if (index === this.length - 1) return this.pop();
