@@ -148,6 +148,23 @@ class DoublyLinkedList {
     this.length += 1;
     return this;
   }
+
+  remove(index) {
+    if (index < 0 || index >= this.length) return null;
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+
+    let nodeToRemove = this.get(index);
+    let prevNode = nodeToRemove.prev;
+    let nextNode = nodeToRemove.next;
+
+    prevNode.next = nodeToRemove.next;
+    nextNode.prev = nodeToRemove.prev;
+    nodeToRemove.next = null;
+    nodeToRemove.prev = null;
+
+    return nodeToRemove;
+  }
 }
 
 let list = new DoublyLinkedList();
