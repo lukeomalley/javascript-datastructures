@@ -25,3 +25,9 @@ Applications of a stack:
 - The JS message/callback queue
 - Background tasks on a computer
 - Printer queue
+
+## Binary Search Tree
+A collection of Nodes in a tree-like structure. Every Node has at most two children nodes. The children nodes msut satsify the BST property, where a the left node is less than the parent node and the right node is greater than the parent node.
+Applications for BST's:
+- SQL DB Indexing
+- Dictionaries
