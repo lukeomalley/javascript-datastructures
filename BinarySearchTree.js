@@ -11,6 +11,7 @@ class BinarySearchTree {
     this.root = null;
   }
 
+  // O(log(n)) TIME | O(1) SPACE
   insert(value) {
     const newNode = new Node(value);
 
@@ -39,6 +40,22 @@ class BinarySearchTree {
         }
       }
     }
+  }
+
+  // O(log(n)) TIME | O(1) SPACE
+  contains(value) {
+    if (!this.root) return false;
+    let currentNode = this.root;
+    while (currentNode) {
+      if (value === currentNode.value) {
+        return true;
+      } else if (value < currentNode.value) {
+        currentNode = currentNode.left;
+      } else {
+        currentNode = currentNode.right;
+      }
+    }
+    return false;
   }
 }
 
