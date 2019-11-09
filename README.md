@@ -18,3 +18,10 @@ Applications of a stack:
 - Reverse a word
 - Undo mechanism in text editors
 - Backtracking: think abou solving a maze, when you get to a dead end you need to backtrack
+
+## Queue
+A queue is a container of objects that are inserted and removed following the FIFO(first in first out) principle. New additions are made to the back of the queue(enqueue) and removals are made from the front of the queue(dequeue).
+Applications of a stack:
+- The JS message/callback queue
+- Background tasks on a computer
+- Printer queue
