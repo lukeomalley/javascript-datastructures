@@ -31,3 +31,9 @@ A collection of Nodes in a tree-like structure. Every Node has at most two child
 Applications for BST's:
 - SQL DB Indexing
 - Dictionaries
+
+## Binary Heap
+In a Max Binary Heap parent nodes are always larger than child nodes. In a Min Binary Heap the opposite is true. Each node has a most two children nodes and the sturcture is as compact as possible filling the left child node before the right child node. There is no implied relationship between siblings other than the fact that they are less than or greater than their parent nodes.
+Applicatons of Heaps:
+- Priority Queues
+- Graph Traversals
