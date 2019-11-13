@@ -37,3 +37,10 @@ In a Max Binary Heap parent nodes are always larger than child nodes. In a Min B
 Applicatons of Heaps:
 - Priority Queues
 - Graph Traversals
+
+## Hash Table
+Data structure used to store key value pairs Like arrays, but keys are not ordered. Hash Tables allow for fast lookups. Uses a hash function to convert key names into array indices. Hash function should operate in constant time, provide a normal distribution of outputs and be deterministic (same output for given input).
+
+Separate Chaining - We store values at each index with a more sophisticated data scturcutre like a linked list, which allows for multiple key value pairs at the same index.
+
+Linear Probing - When a collision is found, we search through the array to find the next empty slot. This allows for one key value pair at each index.
