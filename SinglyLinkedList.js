@@ -122,7 +122,7 @@ class SinglyLinkedList {
 
   // O(n) TIME | O(1) SPACE
   remove(index) {
-    // remove the item at the
+    // remove the item at the given index
     if (index < 0 || index > this.length) return null;
     if (index === this.length - 1) return this.pop();
     if (index === 0) return this.shift();
