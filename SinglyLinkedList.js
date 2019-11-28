@@ -136,7 +136,7 @@ class SinglyLinkedList {
 
   // O(n) TIME | O(1) SPACE
   reverse() {
-    // reverse the entire list
+    // reverse the whole list
     let node = this.head;
     this.head = this.tail;
     this.tail = node;
