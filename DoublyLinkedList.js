@@ -15,7 +15,7 @@ class DoublyLinkedList {
 
   // O(n) TIME | O(n) SPACE
   print() {
-    // convert list to array
+    // create an array from the linked list for printing purposes
     const list = [];
     let currNode = this.head;
     while (currNode) {
